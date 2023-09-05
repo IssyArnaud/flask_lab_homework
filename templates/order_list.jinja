@@ -5,9 +5,9 @@
     <body>
         <h1>{{ title }}</h1>
         <ul>
-            {% for order in orders %}
-            {# <li><a href="/blog/month/january">January</a></li> #}
-            <li>{{ order.customer_name }}, <b>{{ order.order_date }}</b>: <c>{{ order.product_name }}</c>, <d>{{ order.quantity }}</d></li>
+            {% for order in orders %} 
+            <li><a href="/orders/<int(order.index)>">{{ order.customer_name }}, <b>{{ order.order_date }}</b>: <c>{{ order.product_name }}</c>, <d>{{ order.quantity }}</d></a></li>
+            {# I can't find a way of incorporating the link into the for loop... #}
             {% endfor %}
         </ul>
     </body>
